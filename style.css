@@ -1,0 +1,526 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+body, html{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* ================================================= navbar */
+
+.navbar-container{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    padding: 1.2% 8%;
+    position: fixed;
+    z-index: 1000;
+}
+
+.navbar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-cont{
+    display: flex;
+    align-items: center;
+    flex-basis: 40%;
+}
+
+.links-cont{
+    flex-basis: 45%;
+    align-items: center;
+}
+
+.links-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.links a{
+    color: black;
+}
+
+.links {
+    position: relative;
+}
+
+.links::after{
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: 0.4s;
+}
+
+.links:hover::after{
+    width: 100%;
+}
+
+
+
+
+/* ================================================= menu phone */
+
+.menu-phone{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px ;
+    height: 20px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.menu-bar{
+    content: "";
+    width: 100%;
+    height: 2.5px ;
+    background-color: black;
+    transition: 0.5s;
+}
+
+.menu-phone.active .bar1{
+    transform:translateY(8px) rotate(45deg) ;
+}
+.menu-phone.active .bar2{
+    display: none;
+    opacity: 0;
+}
+.menu-phone.active .bar3{
+    transform:translateY(-10px) rotate(-45deg) ;
+}
+
+
+
+@media Only screen and (max-width: 750px){
+    
+    /* .navbar-container{
+        position: relative;
+    } */
+    
+    .links-cont{
+        position: absolute;
+        /* display: block; */
+        width: 280px;
+        top: 0;
+        right: -280px;
+        height: 100vh;
+        background-color: white;
+        padding: 100px 20px ;
+        transition: 0.4s;
+    }
+    
+    .links-list{
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        height: 35vh;
+        justify-content: space-between;
+        
+    }
+
+    .links a{
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .menu-phone{
+        display: flex;
+    }
+
+    .navbar-container{
+        padding: 2% 6%;
+        
+    }
+
+    .links-cont.active{
+        right: 0px;
+    }
+
+
+    /* .col-contact{
+        min-width: 250px;
+
+    } */
+}    
+
+/* ================================================= home */
+
+
+
+
+.home-sec {
+    width: 100%;
+    height: 100vh;
+    background: url("./img/cafe-slider-2.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.home-text{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 8%;
+    color: white;
+    width: 60%;
+}
+
+.text-cont h6 {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.text-cont p {
+    font-size: 100px;
+    font-weight: 700;
+    
+}
+
+.getstarted-link{
+    display: inline-block;
+    color: white;
+    text-transform: uppercase;
+    margin-top: 20px;
+    padding: 20px 30px;
+    background-color: rgb(45, 45, 45);
+    font-weight: 700;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.getstarted-link:hover {
+    background-color: black;
+}
+
+
+
+@media Only screen and (max-width: 1150px){
+
+    .links-cont{
+        flex-basis: 50%;
+        
+    }
+
+    .text-cont p {
+        font-size: 85px;
+    }
+    
+    .home-text{
+        width: 90%;
+    }
+}
+
+
+@media Only screen and (max-width: 920px) {
+    .text-cont p {
+        font-size: 80px;
+    }
+    
+    .links-cont{
+        flex-basis: 65%;
+        
+    }
+}
+
+@media Only screen and (max-width: 750px) {
+    .text-cont p {
+        font-size: 60px;
+    }
+}
+
+@media Only screen and (max-width: 480px) {
+    .text-cont p {
+        font-size: 45px;
+    }
+
+    .col-contact {
+        width: 250px;
+    }
+
+}
+
+
+/* ================================================= about */ 
+
+
+
+.about-us-sec{
+    width: 100%;
+    padding: 100px 8%;
+}
+
+.about-us-col{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    
+}
+
+.col1{
+    flex-basis: 50%;
+}
+
+.img-about{
+    display: flex;
+    align-items: center;
+}
+
+.hamburger-img{
+    width: 100%;
+}
+
+.text-about{
+    padding: 35px 0;
+    
+}
+
+.text-about h1{
+    font-size: 32px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.text-about p {
+    margin: 55px 0;
+    color: rgb(64, 64, 64);
+    font-size: 15px;
+}
+
+.text-about a{
+    padding: 15px 35px;
+    background-color: orange;
+    display: inline;
+    color: white;
+    border-radius: 30px;
+    font-weight: 700;
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+
+@media Only screen and (max-width: 920px) {
+    .about-us-col {
+        flex-direction: column;
+    }
+
+    .col1{
+        flex-basis: 100%;
+    }
+
+}
+
+
+/* ================================================= PRODUCT */ 
+/* 
+.cs-hidden{
+    height: 320px;
+} */
+
+.meels-sec{
+    padding: 0px 8% 100px 8%;
+    margin: 0 auto;
+}
+
+.title-meels-sec{
+    text-align: center;
+}
+
+.title-meels-sec h1 {
+    font-size: 35px;
+    margin-bottom: 50px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart{
+    width: 250px;
+    background-color: white;
+    /* box-shadow: 2px 10px 12px rgba(149, 149, 149, 0.249); */
+    border: 1px solid rgb(225, 225, 225);
+    display: flex;
+    flex-direction: column;
+    margin: 20px 7.5px;
+}
+
+.image-meel{
+    width: 100%;
+}
+
+
+.meel-text{
+    padding: 15px 10px;
+    text-align: center;
+}
+
+.meel-text h1{
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(68, 68, 68);
+    margin-bottom: 20px;
+}
+
+.meel-text p {
+    font-size: 19px;
+    font-weight: 700;
+}
+
+
+
+/* ================================================= banner 2 */ 
+
+
+.banner-sec-2{
+    background: url(./img/fried-chicken-g295348890_1920.jpg);   
+    background-size: cover;
+    background-position: bottom;
+    border-radius: 12px;
+    height: 60vh;
+    margin: 0 8%; 
+}
+
+@media Only screen and (max-width: 1150px){
+
+    .banner-sec-2{
+        height: 50vh;
+    }
+    
+}
+
+@media Only screen and (max-width: 1150px){
+
+    .banner-sec-2{
+        height: 40vh;
+    }
+    
+    
+}
+
+
+@media Only screen and (max-width: 750px){
+
+    .banner-sec-2{
+        height: 30vh;
+    } 
+
+
+    
+}
+
+
+
+/* ================================================= Contact */ 
+
+
+.contact-sec{
+    margin-top: 100px ;
+    background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.6)), url(./img/pexels-purvesh-photography-13624261.jpg);;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.col-contact{
+    /* min-width: 350px; */
+    width: 40%;
+    background: white;
+    padding: 30px 20px;
+    border-radius: 10px;
+
+}
+
+.col-contact h1{
+    margin-bottom: 25px ;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+.form-control{
+    width: 100%;
+    border: 0;
+    background: rgb(248, 248, 248);
+    padding: 10px ;
+    outline: none;
+}
+
+.form-group h5 {
+    margin-top: 25px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(48, 48, 48);
+}
+
+.btn-contact{
+    display: block;
+    margin: 20px auto 0 auto;
+    background-color: orange;
+    border: 0;
+    outline: 0;
+    padding: 12px 40px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.btn-contact:hover {
+    background-color: rgb(255, 136, 0);
+}
+
+
+@media Only screen and (max-width: 1150px){
+    .col-contact{
+        width: 50%;
+    }
+}
+
+
+@media Only screen and (max-width: 950px){
+    .col-contact{
+        width: 60%;
+    }
+}
+
+@media Only screen and (max-width: 600px){
+    .col-contact{
+        width: 70%;
+    }
+}
+
+@media Only screen and (max-width: 480px){
+    .col-contact{
+        width: 85%;
+    }
+}
